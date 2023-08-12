@@ -49,7 +49,7 @@ android {
 }
 
 dependencies {
-    implementation platform('org.dizitart:nitrite-bom:4.1.1-SNAPSHOT')
+    implementation platform('org.dizitart:nitrite-bom:4.2.0-SNAPSHOT')
     implementation 'org.dizitart:nitrite'
     implementation 'org.dizitart:nitrite-mvstore-adapter'
 
