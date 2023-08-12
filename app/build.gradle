@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'org.dizitart.nitrite.demo'
+    compileSdk 33
+
+    packagingOptions {
+        resources {
+            excludes.add('META-INF/DEPENDENCIES.txt')
+            excludes.add('META-INF/LICENSE.txt')
+            excludes.add('META-INF/NOTICE.txt')
+            excludes.add('META-INF/NOTICE')
+            excludes.add('META-INF/LICENSE')
+            excludes.add('META-INF/DEPENDENCIES')
+            excludes.add('META-INF/notice.txt')
+            excludes.add('META-INF/license.txt')
+            excludes.add('META-INF/dependencies.txt')
+            excludes.add('META-INF/LGPL2.1')
+        }
+    }
+
+    defaultConfig {
+        applicationId "org.dizitart.nitrite.demo"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation platform('org.dizitart:nitrite-bom:4.1.1-SNAPSHOT')
+    implementation 'org.dizitart:nitrite'
+    implementation 'org.dizitart:nitrite-mvstore-adapter'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+configurations.implementation {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
