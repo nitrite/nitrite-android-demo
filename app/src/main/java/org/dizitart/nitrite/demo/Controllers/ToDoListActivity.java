@@ -161,7 +161,7 @@ public class ToDoListActivity extends AppCompatActivity {
             CheckBox button = view.findViewById(R.id.checkButton);
             button.setChecked(todoList.get(i).getStatus());
 
-            //region the fucking shit i do to get procedurally generated stuff -.-
+            //region setting color states
             int[][] states = new int[][]{
                     new int[]{-android.R.attr.state_checked}, //disabled
                     new int[]{android.R.attr.state_checked} //enabled
