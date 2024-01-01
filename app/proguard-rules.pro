@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class org.diztart.no2.** { *; }
+-keep class org.dizitart.no2.** { *; }
 -keep class org.slf4j.** { *; }
 -keep class org.h2.** { *; }
 -keep class org.objenesis.** { *; }
